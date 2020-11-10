@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+	<!-- Charset -->
+	<meta charset="UTF-8">
+	<!-- Adaptive -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- WordPress header -->
+	<title>Конструктор тортов</title>
+	<link rel="stylesheet" href="reset.css" type="text/css" />
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="js/calc.js"></script>
+</head>
+
+<body>
+
+<!-- wrapper -->
+<div id="wrapper">
+
+	<!-- leftColumn -->
+	<div class="leftColumn">
+
+		<!-- calcForm -->
+		<form action="" method="">
+
+			<!-- levelCake -->
+			<label>Количество уровней: <span class="requiredField">*</span></label>
+
+			<div class="levelCake">
+
+				<!-- 1 level -->
+				<div class="level">
+					<img src="https://via.placeholder.com/120x120?text=1">
+					<input type="radio" name="level" value="">
+				</div>
+
+				<!-- 2 level -->
+				<div class="level">
+					<img src="https://via.placeholder.com/120x120?text=2">
+					<input type="radio" name="level" value="">
+				</div>
+
+				<!-- 3 level -->
+				<div class="level">
+					<img src="https://via.placeholder.com/120x120?text=3">
+					<input type="radio" name="level" value="">
+				</div>
+
+				<!-- 4 level -->
+				<div class="level">
+					<img src="https://via.placeholder.com/120x120?text=4">
+					<input type="radio" name="level" value="">
+				</div>
+
+			</div><!-- /end levelCake -->
+
+			<!-- fillingCake -->
+			<label>Начинка: <span class="requiredField">*</span></label>
+
+			<div class="fillingCake">
+
+				<!-- infoFilling -->
+				<div class="infoFilling">
+
+					<select name="">
+						<option selected>Выберите начинку</option>
+						<option value="">Тестовый пункт 1</option>
+						<option value="">Тестовый пункт 2</option>
+						<option value="">Тестовый пункт 3</option>
+						<option value="">Тестовый пункт 4</option>
+						<option value="">Тестовый пункт 5</option>
+						<option value="">Тестовый пункт 6</option>
+						<option value="">Тестовый пункт 7</option>
+						<option value="">Тестовый пункт 8</option>
+					</select>
+
+					<p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.	</p>
+				</div>
+
+				<!-- imageFilling -->
+				<div class="imageFilling">
+					<img src="https://via.placeholder.com/350x200?text=Тестовый пункт 1" width="350" height="200">
+				</div>
+				
+			</div><!-- /end fillingCake -->
+
+			<!-- addIngredientsCake -->
+
+			<label>Дополнительные ингредиенты:</label>
+
+			<div class="addIngredientsCake">
+				
+				<div class="ingredientsColumn">
+					<p><input type="checkbox" name="ingredients">Арахис</p>
+					<p><input type="checkbox" name="ingredients">Грецкий орех</p>
+					<p><input type="checkbox" name="ingredients">Лесной орех</p>
+					<p><input type="checkbox" name="ingredients">Миндаль</p>
+				</div>
+
+				<div class="ingredientsColumn">
+					<p><input type="checkbox" name="ingredients">Мёд</p>
+					<p><input type="checkbox" name="ingredients">Мак</p>
+					<p><input type="checkbox" name="ingredients">Корица</p>
+					<p><input type="checkbox" name="ingredients">Изюм</p>
+				</div>
+
+				<div class="ingredientsColumn">
+					<p><input type="checkbox" name="ingredients">Курага</p>
+					<p><input type="checkbox" name="ingredients">Чернослив</p>
+					<p><input type="checkbox" name="ingredients">Малина</p>
+					<p><input type="checkbox" name="ingredients">Чёрная смородина</p>
+				</div>
+
+				<div class="ingredientsColumn">
+					<p><input type="checkbox" name="ingredients">Брусника</p>
+					<p><input type="checkbox" name="ingredients">Черника</p>
+				</div>
+
+			</div>
+
+			<!-- designCake -->
+
+			<label>Оформление: <span class="requiredField">*</span></label>
+
+			<div class="designCake">
+
+				<div class="design">
+
+					<select name="">
+						<option selected>Выберите покрытие</option>
+						<option value="">Велюр</option>
+						<option value="">Крем</option>
+						<option value="">Мастика</option>
+						<option value="">Ганаш</option>
+						<option value="">Шоколад</option>
+						<option value="">Брызги</option>
+					</select>
+
+					<select name="">
+						<option selected>Выберите декор</option>
+						<option value="">Декор 1</option>
+						<option value="">Декор 2</option>
+						<option value="">Декор 3</option>
+						<option value="">Декор 4</option>
+						<option value="">Декор 5</option>
+						<option value="">Декор 6</option>
+						<option value="">Декор 7</option>
+					</select>
+
+				</div>
+
+				<div class="commentDesign">
+					<textarea name="" placeholder="Если вам нужно другое оформление, добавьте в это поле ссылку"></textarea>
+					<p>Наши работы:<img src="images/instagram.svg" width="20"><a href="https://instagram.com/ksannikova_ekb/" target="_blank">ksannikova_ekb</a></p>
+				</div>
+				
+			</div><!-- /end designCake -->
+
+			<!-- discountCake -->
+			<label>Купон на скидку:</label>
+			
+			<div class="discountCake">
+
+				<p>Если у вас есть купон на скидку, введите его в поле ниже. Система автоматически произведёт расчёт стоимости.</p>
+
+				<input type="text" name="" placeholder="Номер купона">
+
+			</div><!-- /end discountCake -->
+			
+		</form>
+		
+	</div><!-- /end leftColumn-->
+
+	<!-- rightColumn -->
+	<div class="rightColumn">
+
+		<!-- resultCake -->
+		<div class="resultCake">
+
+			<p><strong>Количество уровней</strong>: </p>
+			<p><strong>Начинка</strong>: </p>
+			<p><strong>Оформление</strong>: </p>
+			<p><strong>Итого</strong>: ~<span class="costCake">NaN</span></p>
+			
+		</div><!-- /end resultCake-->
+
+		<!-- formBuyCake -->
+		<form action="" method="">
+			
+			<input type="text" name="" placeholder="Ваше имя">
+			<input type="text" name="" placeholder="Номер телефона">
+			<input type="text" name="" placeholder="E-mail">
+			<input type="submit" name="" value="Оформить заказ">
+			
+		</form>
+		
+	</div><!-- /end rightColumn -->
+	
+</div><!-- /end wrapper -->
+
+<!-- footer -->
+<div class="footer">
+	<p>Artem Sannikov &copy; 2020</p>
+</div><!-- /end footer -->
+
+</body>
+
+</html>
