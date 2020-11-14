@@ -84,13 +84,13 @@ img {
 	}
 
 		/*calcForm*/
-		.leftColumn form {
+		form#calcForm {
 			width: 100%;
 			height: auto;
 		}
 
 			/*lebel*/
-			.leftColumn form label {
+			form#calcForm label.titleBlock {
 				width: 100%;
 				height: auto;
 				display: block;
@@ -100,42 +100,61 @@ img {
 				color: #333;
 				margin: 0 0 30px 0;
 			}
-				.leftColumn form label span.requiredField {
+				form#calcForm label.titleBlock span.requiredField {
 					color: #e74c3c;
 					font-weight: bold;
 				}
 
 			/*levelCake*/
-			.leftColumn form .levelCake {
+			form#calcForm .levelCake {
 				width: 100%;
 				height: auto;
 				display: flex;
-					justify-content: space-between;
+					justify-content: flex-start;
 				margin: 0 0 30px 0;
 				padding: 0 0 30px 0;
 				border-bottom: 1px solid #f9f7f7;
 			}
-				.leftColumn form .levelCake .level {
+				form#calcForm .levelCake .level {
 					width: 20%;
 					height: auto;
+					margin: 0 30px 0 0;
 				}
-					.leftColumn form .levelCake .level img {
+						form#calcForm .levelCake .level:last-child {
+							margin: 0 0 0 0;
+						}
+					form#calcForm .levelCake .level img {
 						display: block;
 						vertical-align: bottom;
 						max-width: 100%;
 						border-radius: 3px;
-						margin: 0 auto 10px auto;
+						margin: 0 auto 20px auto;
 					}
-					.leftColumn form .levelCake .level input[type="radio"] {
-						display: block;
-						width: 16px;
-						height: 16px;
-						margin: 0 auto;
-						outline: 0;
-					}
+						form#calcForm .levelCake .level .levelInfo {
+							width: 100%;
+							height: auto;
+							display: flex;
+								justify-content: center;
+						}
+							form#calcForm .levelCake .level .levelInfo  > label {
+								display: inline-block;
+								width: auto;
+								font-size: 14px;
+								line-height: 100%;
+								font-weight: normal;
+								color: #333;
+								margin: 0 0 0 0;
+								cursor: pointer;
+							}
+							form#calcForm .levelCake .level .levelInfo > input[type="radio"] {
+								display: inline-block;
+								width: 16px;
+								height: 16px;
+								margin: 0 10px 0 0;
+							}
 
 			/*fillingCake*/
-			.leftColumn form .fillingCake {
+			form#calcForm .fillingCake {
 				width: 100%;
 				height: auto;
 				display: flex;
@@ -144,11 +163,11 @@ img {
 				padding: 0 0 30px 0;
 				border-bottom: 1px solid #f9f7f7;
 			}
-				.leftColumn form .fillingCake .infoFilling {
+				form#calcForm .fillingCake .infoFilling {
 					width: calc(100% - 380px);
 					height: auto;
 				}
-					.leftColumn form .fillingCake .infoFilling select {
+					form#calcForm .fillingCake .infoFilling select {
 						width: 100%;
 						height: 36px;
 						border-radius: 3px;
@@ -161,16 +180,16 @@ img {
 						box-sizing: border-box;
 						margin: 0 0 20px 0;
 					}
-					.leftColumn form .fillingCake .infoFilling p {
+					form#calcForm .fillingCake .infoFilling p {
 						font-size: 14px;
 						line-height: 200%;
 						color: #333;
 					}
-				.leftColumn form .fillingCake .imageFilling {
+				form#calcForm .fillingCake .imageFilling {
 					width: 350px;
 					height: auto;
 				}
-					.leftColumn form .fillingCake .imageFilling img {
+					form#calcForm .fillingCake .imageFilling img {
 						display: block;
 						vertical-align: bottom;
 						max-width: 100%;
@@ -178,7 +197,7 @@ img {
 					}
 
 			/*addIngredientsCake*/
-			.leftColumn form .addIngredientsCake {
+			form#calcForm .addIngredientsCake {
 				width: 100%;
 				height: auto;
 				display: flex;
@@ -187,31 +206,40 @@ img {
 				padding: 0 0 30px 0;
 				border-bottom: 1px solid #f9f7f7;				
 			}
-				.leftColumn form .addIngredientsCake .ingredientsColumn {
+				form#calcForm .addIngredientsCake .ingredientsColumn {
 					width: 20%;
 					height: auto;
 				}
-					.leftColumn form .addIngredientsCake .ingredientsColumn p {
-						font-size: 14px;
-						line-height: 100%;
-						color: #333;
+					form#calcForm .addIngredientsCake .ingredientsColumn .ingredientsInfo {
+						width: 100%;
+						height: auto;
+						display: flex;
+							justify-content: flex-start;
 						margin: 0 0 20px 0;
 					}
-						.leftColumn form .addIngredientsCake .ingredientsColumn p:last-child {
+						form#calcForm .addIngredientsCake .ingredientsColumn .ingredientsInfo:last-child {
 							margin: 0 0 0 0;
 						}
-					.leftColumn form .addIngredientsCake .ingredientsColumn input[type="checkbox"] {
+					form#calcForm .addIngredientsCake .ingredientsColumn .ingredientsInfo input[type="checkbox"] {
 						display: inline-block;
 						width: 16px;
 						height: 16px;
 						outline: 0;
-						margin: 0 5px 0 0;
-						position: relative;
-						top: 3px;					
+						margin: 0 10px 0 0;				
+					}
+					form#calcForm .addIngredientsCake .ingredientsColumn .ingredientsInfo label {
+						display: inline-block;
+						width: auto;
+						font-size: 14px;
+						font-weight: normal;
+						color: #333;
+						line-height: 100%;
+						margin: 0 0;
+						cursor: pointer;
 					}
 
 			/*designCake*/
-			.leftColumn form .designCake {
+			form#calcForm .designCake {
 				width: 100%;
 				height: auto;
 				display: flex;
@@ -220,11 +248,11 @@ img {
 				padding: 0 0 30px 0;
 				border-bottom: 1px solid #f9f7f7;				
 			}
-				.leftColumn form .designCake .design {
+				form#calcForm .designCake .design {
 					width: calc(100% - 380px);
 					height: auto;
 				}
-					.leftColumn form .designCake .design select {
+					form#calcForm .designCake .design select {
 						width: 100%;
 						height: 36px;
 						border-radius: 3px;
@@ -237,14 +265,14 @@ img {
 						box-sizing: border-box;
 						margin: 0 0 20px 0;
 					}
-						.leftColumn form .designCake .design select:last-child {
+						form#calcForm .designCake .design select:last-child {
 							margin: 0 0 0 0;
 						}
-				.leftColumn form .designCake .commentDesign {
+				form#calcForm .designCake .commentDesign {
 					width: 350px;
 					height: auto;
 				}
-					.leftColumn form .designCake .commentDesign textarea {
+					form#calcForm .designCake .commentDesign textarea {
 						width: 100%;
 						height: 92px;
 						border-radius: 3px;
@@ -259,20 +287,20 @@ img {
 						box-sizing: border-box;
 						resize: none;
 					}
-					.leftColumn form .designCake .commentDesign p {
+					form#calcForm .designCake .commentDesign p {
 						font-size: 14px;
 						line-height: 100%;
 						color: #333;
 						text-align: right;
 					}
-						.leftColumn form .designCake .commentDesign p a {
+						form#calcForm .designCake .commentDesign p a {
 							text-decoration: underline;
 							color: #333;
 						}
-							.leftColumn form .designCake .commentDesign p a:hover {
+							form#calcForm .designCake .commentDesign p a:hover {
 								text-decoration: none;
 							}
-						.leftColumn form .designCake .commentDesign p img {
+						form#calcForm .designCake .commentDesign p img {
 							position: relative;
 							top: 3px;
 							margin: 0 3px 0 10px;
@@ -282,17 +310,17 @@ img {
 						}
 
 			/*discountCake*/
-			.leftColumn form .discountCake {
+			form#calcForm .discountCake {
 				width: 100%;
 				height: auto;
 			}
-				.leftColumn form .discountCake p {
+				form#calcForm .discountCake p {
 					font-size: 14px;
 					line-height: 100%;
 					color: #333;
 					margin: 0 0 20px 0;
 				}
-				.leftColumn form .discountCake input[type="text"] {
+				form#calcForm .discountCake input[type="text"] {
 					width: 100%;
 					height: 36px;
 					border-radius: 3px;
@@ -317,7 +345,7 @@ img {
 		.rightColumn .resultCake {
 			width: 100%;
 			height: auto;
-			padding: 15px 15px;
+			padding: 20px 20px;
 			border-radius: 5px;
 			border: 1px dashed #eee;
 			box-sizing: border-box;
@@ -327,14 +355,14 @@ img {
 				font-size: 14px;
 				line-height: 100%;
 				color: #333;
-				margin: 0 0 15px 0;
+				margin: 0 0 20px 0;
 			}
 					.rightColumn .resultCake p:last-child {
 						margin: 0 0 0 0;
 					}
-				.rightColumn .resultCake p span.costCake {
+				.rightColumn .resultCake p span.showCost {
 					color: #e74c3c;
-					font-weight: 600;
+					font-weight: bold;
 				}
 
 		/*formBuyCake*/
