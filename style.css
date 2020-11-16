@@ -1,0 +1,456 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&subset=cyrillic');
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+		letter-spacing: 0.2px;
+	background-image: url('images/bg.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	vertical-align: bottom;
+}
+
+/*header*/
+.header {
+	width: 1200px;
+	height: auto;
+	margin: 30px auto;
+	display: flex;
+		justify-content: space-between;
+		align-items: center;
+}
+	/*logo*/
+	.header .logo {
+		width: 220px;
+		height: auto;
+	}
+		.header .logo img {
+			display: block;
+			vertical-align: bottom;
+			max-width: 100%;
+		}
+	/*nav*/
+	.header .nav {
+		width: 30%;
+		height: auto;
+	}
+		.header .nav ul {
+			width: 100%;
+			height: auto;
+			list-style-type: none;
+			list-style-position: inside;
+			display: flex;
+				justify-content: space-between;
+		}
+			.header .nav ul li {
+				font-size: 14px;
+				line-height: 100%;
+				text-shadow: 1px 1px 1px #333;
+			}
+				.header .nav ul li a {
+					text-decoration: none;
+					color: #fff;
+				}
+					.header .nav ul li a:hover {
+						text-decoration: underline;
+					}
+
+/*wrapper*/
+#wrapper {
+	width: 1200px;
+	height: auto;
+	display: flex;
+		justify-content: space-between;
+	margin: 0 auto 30px auto;
+	padding: 30px 30px;
+	box-sizing: border-box;
+	background-color: #fff;
+	border-radius: 10px;
+}
+	/*leftColumn*/
+	.leftColumn {
+		width: 810px;
+		height: auto;
+		box-sizing: border-box;
+	}
+
+		/*Форма конструктора*/
+		form#calcForm {
+			width: 100%;
+			height: auto;
+		}
+
+			/*Заголовок блоков*/
+			form#calcForm label.titleBlock {
+				width: 100%;
+				height: auto;
+				display: block;
+				font-size: 14px;
+				font-weight: 600;
+				line-height: 100%;
+				color: #333;
+				margin: 0 0 30px 0;
+			}
+				form#calcForm label.titleBlock span.requiredField {
+					color: #e74c3c;
+					font-weight: bold;
+				}
+
+			/*Количество ярусов*/
+			form#calcForm .levelCake {
+				width: 100%;
+				height: auto;
+				display: flex;
+					justify-content: flex-start;
+				margin: 0 0 30px 0;
+				padding: 0 0 30px 0;
+				border-bottom: 1px solid #f9f7f7;
+			}
+				form#calcForm .levelCake .level {
+					width: 20%;
+					height: auto;
+					margin: 0 30px 0 0;
+				}
+						form#calcForm .levelCake .level:last-child {
+							margin: 0 0 0 0;
+						}
+					form#calcForm .levelCake .level img {
+						display: block;
+						vertical-align: bottom;
+						max-width: 100%;
+						border-radius: 3px;
+						margin: 0 auto 20px auto;
+					}
+						form#calcForm .levelCake .level .levelInfo {
+							width: 100%;
+							height: auto;
+							display: flex;
+								justify-content: center;
+						}
+							form#calcForm .levelCake .level .levelInfo  > label {
+								display: inline-block;
+								width: auto;
+								font-size: 14px;
+								line-height: 100%;
+								font-weight: normal;
+								color: #333;
+								margin: 0 0 0 0;
+								cursor: pointer;
+							}
+							form#calcForm .levelCake .level .levelInfo > input[type="radio"] {
+								display: inline-block;
+								width: 16px;
+								height: 16px;
+								margin: 0 10px 0 0;
+							}
+
+			/*Начинка торта*/
+			form#calcForm .fillingCake {
+				width: 100%;
+				height: auto;
+				display: flex;
+					justify-content: space-between;
+				margin: 0 0 30px 0;
+				padding: 0 0 30px 0;
+				border-bottom: 1px solid #f9f7f7;
+			}
+				/*Список начинок и их описание*/
+				form#calcForm .fillingCake .infoFilling {
+					width: calc(100% - 380px);
+					height: auto;
+				}
+					form#calcForm .fillingCake .infoFilling select {
+						width: 100%;
+						height: 36px;
+						border-radius: 3px;
+						border: 1px solid #ccc;
+						outline: 0;
+						font-size: 14px;
+						line-height: 100%;
+						color: #333;
+						padding: 0 10px;
+						box-sizing: border-box;
+						margin: 0 0 20px 0;
+					}
+					form#calcForm .fillingCake .infoFilling p {
+						font-size: 14px;
+						line-height: 200%;
+						color: #333;
+					}
+				/*Изображение начинки*/
+				form#calcForm .fillingCake .imageFilling {
+					width: 350px;
+					height: auto;
+				}
+					form#calcForm .fillingCake .imageFilling img {
+						display: block;
+						vertical-align: bottom;
+						max-width: 100%;
+						border-radius: 3px;
+					}
+
+			/*Дополнительные ингредиенты*/
+			form#calcForm .addIngredientsCake {
+				width: 100%;
+				height: auto;
+				display: flex;
+					justify-content: space-between;
+					flex-wrap: wrap;
+				margin: 0 0 30px 0;
+				border-bottom: 1px solid #f9f7f7;				
+			}
+				form#calcForm .addIngredientsCake .ingredientsColumn {
+					width: 32%;
+					height: auto;
+					background-color: #f9f7f7;
+					margin: 0 0 30px 0;
+					padding: 15px 15px;
+					border-radius: 5px;
+					box-sizing: border-box;
+				}
+					form#calcForm .addIngredientsCake .ingredientsColumn p {
+						font-size: 14px;
+						line-height: 150%;
+						color: #333;
+						margin: 0 0 20px 0;
+						font-weight: 600;
+					}
+					form#calcForm .addIngredientsCake .ingredientsColumn .ingredientsInfo {
+						width: 100%;
+						height: auto;
+						display: flex;
+							justify-content: flex-start;
+						margin: 0 0 20px 0;
+					}
+						form#calcForm .addIngredientsCake .ingredientsColumn .ingredientsInfo:last-child {
+							margin: 0 0 0 0;
+						}
+					form#calcForm .addIngredientsCake .ingredientsColumn .ingredientsInfo input[type="checkbox"] {
+						display: inline-block;
+						width: 16px;
+						height: 16px;
+						outline: 0;
+						margin: 0 10px 0 0;				
+					}
+					form#calcForm .addIngredientsCake .ingredientsColumn .ingredientsInfo label {
+						display: inline-block;
+						width: auto;
+						font-size: 14px;
+						font-weight: normal;
+						color: #333;
+						line-height: 100%;
+						margin: 0 0;
+						cursor: pointer;
+					}
+
+			/*Оформление торта*/
+			form#calcForm .designCake {
+				width: 100%;
+				height: auto;
+				display: flex;
+					justify-content: space-between;
+				margin: 0 0 30px 0;
+				padding: 0 0 30px 0;
+				border-bottom: 1px solid #f9f7f7;				
+			}
+				form#calcForm .designCake .design {
+					width: calc(100% - 380px);
+					height: auto;
+				}
+					form#calcForm .designCake .design select {
+						width: 100%;
+						height: 36px;
+						border-radius: 3px;
+						border: 1px solid #eee;
+						outline: 0;
+						font-size: 14px;
+						line-height: 100%;
+						color: #333;
+						padding: 0 10px;
+						box-sizing: border-box;
+						margin: 0 0 20px 0;
+					}
+						form#calcForm .designCake .design select:last-child {
+							margin: 0 0 0 0;
+						}
+
+			/*Комментарий к заказу*/
+			form#calcForm .commentsCake {
+				width: 100%;
+				height: auto;
+				margin: 0 0 30px 0;
+				padding: 0 0 30px 0;
+				border-bottom: 1px solid #f9f7f7;	
+			}
+				form#calcForm .commentsCake textarea {
+					width: 100%;
+					height: 92px;
+					border-radius: 3px;
+					border: 1px solid #eee;
+					outline: 0;
+					font-family: 'Open Sans', sans-serif;
+					font-size: 14px;
+					line-height: 150%;
+					color: #333;
+					padding: 10px 10px;
+					margin: 0 0 10px 0;
+					box-sizing: border-box;
+					resize: none;
+				}
+				form#calcForm .commentsCake p {
+					font-size: 14px;
+					line-height: 100%;
+					color: #333;
+					text-align: right;
+				}
+					form#calcForm .commentsCake p a {
+						text-decoration: underline;
+						color: #333;
+					}
+						form#calcForm .commentsCake p a:hover {
+							text-decoration: none;
+						}
+					form#calcForm .commentsCake p img {
+						position: relative;
+						top: 3px;
+						margin: 0 5px 0 10px;
+						display: inline-block;
+						vertical-align: bottom;
+						max-width: 100%;
+					}
+
+			/*Купон на скидку*/
+			form#calcForm .discountCake {
+				width: 100%;
+				height: auto;
+			}
+				form#calcForm .discountCake p {
+					font-size: 14px;
+					line-height: 100%;
+					color: #333;
+					margin: 0 0 20px 0;
+				}
+				form#calcForm .discountCake input[type="text"] {
+					width: 100%;
+					height: 36px;
+					border-radius: 3px;
+					border: 1px solid #ccc;
+					outline: 0;
+					font-size: 14px;
+					line-height: 100%;
+					color: #333;
+					padding: 0 10px;
+					box-sizing: border-box;
+				}
+
+	/*rightColumn*/
+	.rightColumn {
+		width: 300px;
+		height: auto;
+		border-left: 1px solid #f9f7f7;
+		padding: 0 0 0 30px;
+		box-sizing: border-box;
+	}
+		/*resultCake*/
+		.rightColumn .resultCake {
+			width: 100%;
+			height: auto;
+			padding: 20px 20px;
+			border-radius: 5px;
+			border: 1px dashed #eee;
+			box-sizing: border-box;
+			margin: 0 0 30px 0;
+		}
+			.rightColumn .resultCake p {
+				font-size: 14px;
+				line-height: 150%;
+				color: #333;
+				margin: 0 0 15px 0;
+			}
+					.rightColumn .resultCake p:last-child {
+						margin: 0 0 0 0;
+					}
+				.rightColumn .resultCake p span.showCost {
+					color: #e74c3c;
+					font-weight: bold;
+				}
+
+			.rightColumn .resultCake .showIngredients {
+				width: 100%;
+				height: auto;
+				margin: 0 0 15px 0;
+			}
+				.rightColumn .resultCake .showIngredients > span.itemIngredients {
+					display: block;
+					width: 100%;
+					height: auto;
+					font-size: 14px;
+					line-height: 150%;
+					color: #27ae60;
+				}
+
+		/*formBuyCake*/
+		.rightColumn form {
+			width: 100%;
+			height: auto;
+		}
+			.rightColumn form input[type="text"] {
+				width: 100%;
+				height: 36px;
+				font-size: 14px;
+				line-height: 100%;
+				color: #333;
+				border-radius: 3px;
+				border: 1px solid #eee;
+				padding: 0 10px;
+				box-sizing: border-box;
+				outline: 0;
+				margin: 0 0 20px 0;
+			}
+			.rightColumn form input[type="submit"] {
+				width: 100%;
+				height: 36px;
+				outline: 0;
+				border: 0;
+				font-size: 14px;
+				line-height: 100%;
+				color: #fff;
+				background-color: #2ecc71;
+				box-shadow: 0 2px 0 #27ae60;
+				border-radius: 3px;
+				cursor: pointer;
+				box-sizing: border-box;
+				transition: 0.1s;
+			}
+				.rightColumn form input[type="submit"]:hover {
+					background-color: #27ae60;
+					transition: 0.1s;
+				}
+
+/*footer*/
+.footer {
+	width: 1200px;
+	height: auto;
+	margin:  0 auto 30px auto;
+	display: flex;
+		justify-content: center;
+}
+	.footer p {
+		display: inline-block;
+		font-size: 14px;
+		line-height: 100%;
+		font-weight: 600;
+		color: #fff;
+		background-color: #000;
+		padding: 10px 15px;
+		border-radius: 3px;
+	}
