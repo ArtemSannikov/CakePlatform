@@ -1,5 +1,10 @@
 $(document).ready(function(){
 
+	// Отключаем отправку формы при нажатии Enter
+	$('form#calcForm').submit(function(){
+		return false;
+	});
+
 	// Получаем параметры с формы
 	function getValue() {
 
@@ -105,8 +110,8 @@ $(document).ready(function(){
 				['Апельсин в шоколаде','images/filling/filling_3.jpg'],
 				['Банан - арахис - карамель','https://via.placeholder.com/350x200?text=Банан-арахис-карамель'],
 				['Ванильно - маковый торт с цитрусовым курдом','https://via.placeholder.com/350x200?text=Ванильно-маковый торт с цитрусовым конфитюром'],
-				['Медовик со сметанным кремом','https://via.placeholder.com/350x200?text=Медовик со сметанным кремом'],
-				['Шоколадный медовик с кремом "Пломбир"','https://via.placeholder.com/350x200?text=Шоколадный медовик с кремом "Пломбир"'],
+				['Медовик со сметанным кремом','images/filling/filling_6.jpg'],
+				['Шоколадный медовик с кремом "Пломбир"','images/filling/filling_7.jpg'],
 				['Классический наполеон со сливочным кремом','https://via.placeholder.com/350x200?text=Классический наполеон со сливочным кремом'],
 			]);
 
@@ -159,7 +164,7 @@ $(document).ready(function(){
 				['Творожный ганаш','images/design/design_4.jpg'],
 				['Шоколадный ганаш','images/design/design_5.jpg'],
 				['Naked cake','https://via.placeholder.com/350x200?text=Naked cake'],
-				['Крошка от коржей','https://via.placeholder.com/350x200?text=Крошка от коржей'],
+				['Крошка от коржей','images/design/design_7.jpg'],
 			]);
 
 			let designValue = parseInt($('select[name=design]' ,'form#calcForm').val());
@@ -180,8 +185,7 @@ $(document).ready(function(){
 			let ingredientsValue = 0;
 			let ingredientsText = '';
 
-			if(ingredientsValue == 0) $('span.showIngredients').html('Не выбрано');
-
+			// Суммируем стоимость всех дополнительных ингредиентов
 			$('input[name=ingredients]:checkbox:checked').each(function(){
 
 				ingredientsValue += parseInt($(this).val());
@@ -189,14 +193,30 @@ $(document).ready(function(){
 				ingredientsText = $('input[name=ingredients]:checked + label' ,'form#calcForm').text();
 
 				$('span.showIngredients').html(ingredientsText);
+				// $('span.showIngredients').html(ingredientsText.replace(/\)/g,')<br>') );
 
 			});
 
+			// Показываем блок в правой колонке, если сумма всех ингредиентов больше 0
+			if(ingredientsValue > 0) {
+
+				$('.resultIngredients').css('display','block')
+
+			}else if(ingredientsValue == 0) {
+
+				$('.resultIngredients').css('display','none')
+
+			}
+
+			// Он отменит событие, так что он не связан над предыдущим событием.
+			// Это позволяет событию запускать только в исходное событие клика.
+			$("img.accordeonIngredientsCake").unbind('click');
+
 			// При клике на иконку (plus) будет показано содержимое всего блока
-			$("form#calcForm label.titleBlock > img.accordeonIngredientsCake").click(function(){
+			$("img.accordeonIngredientsCake").click(function(){
 
 				// Производим замену иконки при нажатии и выводим/скрываем блок с доп.ингредиентами
-				let accordeonIngredients = $('form#calcForm label.titleBlock > img.accordeonIngredientsCake');
+				let accordeonIngredients = $('img.accordeonIngredientsCake');
 
 				if(accordeonIngredients.attr('src') == 'images/icons/plus.svg'){
 
@@ -221,8 +241,7 @@ $(document).ready(function(){
 			let decorValue = 0;
 			let decorText = '';
 
-			if(decorValue == 0) $('span.showDecor').html('Не выбрано');
-
+			// Суммируем стоимость всего дополнительного декора
 			$('input[name=decor]:checkbox:checked').each(function(){
 
 				decorValue += parseInt($(this).val());
@@ -233,11 +252,27 @@ $(document).ready(function(){
 
 			});
 
+			// Показываем блок в правой колонке, если сумма дополнительных ингредиентов больше 0
+			if(decorValue > 0) {
+
+				$('.resultDecor').css('display','block')
+
+			}else if(decorValue == 0) {
+
+				$('.resultDecor').css('display','none')
+
+			}
+
+			// Он отменит событие, так что он не связан над предыдущим событием.
+			// Это позволяет событию запускать только в исходное событие клика.
+			$("img.accordeonDecorCake").unbind('click');
+
 			// При клике на иконку (plus) будет показано содержимое всего блока
-			$("form#calcForm label.titleBlock > img.accordeonDecorCake").click(function(){
+			$("img.accordeonDecorCake").click(function(){
+			// $(document).on('click','img.accordeonDecorCake', function(){
 
 				// Производим замену иконки при нажатии и отображаем блок с дополнительным декором
-				let accordeonDecor = $('form#calcForm label.titleBlock > img.accordeonDecorCake');
+				let accordeonDecor = $('img.accordeonDecorCake');
 
 				if(accordeonDecor.attr('src') == 'images/icons/plus.svg'){
 
@@ -296,11 +331,6 @@ $(document).ready(function(){
 	// Выполняем пересчёт стоиомости, если внесли изменения в конфигурацию
 	$('form#calcForm').on('change', function(){
 		getValue();
-	});
-
-	// Отключаем отправку формы при нажатии Enter
-	$('form#calcForm').submit(function(){
-		return false;
 	});
 
 });
